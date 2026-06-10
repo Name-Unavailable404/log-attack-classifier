@@ -1,0 +1,5 @@
+GET /search?q=<script>alert(1)</script> HTTP/1.1
+GET /login?user=admin' OR '1'='1 HTTP/1.1
+GET /ping?host=127.0.0.1; whoami HTTP/1.1
+GET /download?file=../../../../etc/passwd HTTP/1.1
+GET /home HTTP/1.1
