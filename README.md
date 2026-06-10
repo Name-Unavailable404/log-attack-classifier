@@ -11,6 +11,7 @@ This project focuses on basic log analysis and common web attack indicators such
 - Detects common web attack patterns
 - Separates detection rules from classifier logic
 - Displays matched rule names, confidence levels, and explanations
+- Scans multiple log lines from a text file
 
 ## Supported Attack Types
 
@@ -76,6 +77,22 @@ python classifier.py "GET /ping?host=127.0.0.1; whoami HTTP/1.1"
 python classifier.py "GET /download?file=../../../../etc/passwd HTTP/1.1"
 ```
 
+## File Scanning
+
+You can scan a text file containing multiple log lines:
+
+```powershell
+python classifier.py samples/sample_logs.txt
+```
+
+Example summary:
+
+```text
+Scan Summary
+Total lines scanned: 5
+Suspicious lines found: 4
+```
+
 ## Project Structure
 
 ```text
@@ -105,7 +122,6 @@ Each rule includes:
 
 ## Planned Features
 
-- Add file scanning support for multiple log lines
 - Add scoring by attack type
 - Add JSON or CSV output
 - Add more attack categories such as SSRF, XXE, LDAP injection, and brute force indicators
